@@ -1,0 +1,56 @@
+{
+  "name": "unplugin-lodash-to-lodashes",
+  "version": "0.1.0",
+  "description": "Replace lodash with lodash-es for Vite and Webpack",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    },
+    "./vite": {
+      "require": "./dist/vite.js",
+      "import": "./dist/vite.mjs"
+    },
+    "./webpack": {
+      "require": "./dist/webpack.js",
+      "import": "./dist/webpack.mjs"
+    },
+    "./types": {
+      "require": "./dist/types.js",
+      "import": "./dist/types.mjs"
+    },
+    "./*": "./*"
+  },
+  "files": [
+    "dist",
+    "*.d.ts"
+  ],
+  "scripts": {
+    "build": "tsup && tsx scripts/postbuild.mts"
+  },
+  "keywords": [
+    "unplugin",
+    "lodash",
+    "lodash-es",
+    "vite",
+    "webpack"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@rollup/pluginutils": "^5.0.2",
+    "unplugin": "^1.0.0"
+  },
+  "devDependencies": {
+    "tsx": "^3.12.1",
+    "fast-glob": "^3.2.12",
+    "url": "^0.11.0",
+    "tsup": "^6.5.0",
+    "typescript": "^4.9.3",
+    "vite": "^3.2.4",
+    "webpack": "^5.75.0"
+  }
+}
