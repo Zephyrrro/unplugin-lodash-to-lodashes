@@ -6,7 +6,7 @@ const RequireLodashRegexp = /require\(['"`]lodash(?:-es)*\/(\w*)['"`]\)/gm;
 
 const defaultOptions: Options = {
   include: ['**/*.ts', '**/*.js', '**/*.tsx', '**/*.jsx', '**/*.vue'],
-  exclude: [/[/\\]node_modules[/\\]/],
+  exclude: [],
   lib: 'lodash-es'
 }
 

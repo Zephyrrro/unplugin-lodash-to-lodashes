@@ -16,4 +16,7 @@ for (const file of files) {
   code = code.replace('exports.default =', 'module.exports =')
   code += 'exports.default = module.exports;'
   await writeFile(file, code)
+  // generate submodule .d.ts redirecting
+  const name = basename(file, '.js')
+  await writeFile(`${name}.d.ts`, `export { default } from './dist/${name}'\n`)
 }
