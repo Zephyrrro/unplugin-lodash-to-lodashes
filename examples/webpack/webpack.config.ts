@@ -1,4 +1,5 @@
 const UnpluginLodashToLodashes = require('unplugin-lodash-to-lodashes/webpack');
+const path = require('path');
 
 module.exports = {
   mode: 'production',
@@ -25,6 +26,6 @@ module.exports = {
     moduleIds: 'named',
   },
   plugins: [
-    UnpluginLodashToLodashes(),
+    UnpluginLodashToLodashes({ lib: path.resolve('node_modules/lodash-es') }),
   ],
 }

@@ -1,6 +1,6 @@
 {
   "name": "unplugin-lodash-to-lodashes",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Replace lodash with lodash-es for Vite and Webpack",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -29,7 +29,8 @@
     "*.d.ts"
   ],
   "scripts": {
-    "build": "tsup && tsx scripts/postbuild.mts"
+    "build": "tsup && tsx scripts/postbuild.mts",
+    "prepublishOnly": "tsup && tsx scripts/postbuild.mts"
   },
   "keywords": [
     "unplugin",

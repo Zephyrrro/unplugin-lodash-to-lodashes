@@ -22,16 +22,14 @@ export default createUnplugin<Options>((userOptions: Partial<Options> = {}) => {
 
     transformInclude(id) {
       return filter(id);
-    },
+    },    
 
     vite: {
-      config: () => ({
-        resolve: {
-          alias: {
-            lodash: lib,
-          },
+      resolveId(id) {
+        if (/lodash\/\w+/.test(id)) {
+          return `${id.replace("lodash", lib)}.js`;
         }
-      })
+      },
     },
 
     webpack(compiler) {

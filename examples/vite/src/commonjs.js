@@ -1,5 +1,7 @@
 const isNumber = require('lodash/isNumber');
 
-export default function CommonJS() {
+function CommonJS() {
   return isNumber(123)
 }
+
+exports.isNumber = CommonJS;

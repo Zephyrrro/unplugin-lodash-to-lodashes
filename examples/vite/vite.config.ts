@@ -1,18 +1,16 @@
+import path from 'path';
 import { defineConfig } from 'vite';
-//  @ts-ignore
 import UnpluginLodashToLodashes from 'unplugin-lodash-to-lodashes/vite';
 
 export default defineConfig({
   plugins: [
-    UnpluginLodashToLodashes(),
+    UnpluginLodashToLodashes({ lib: path.resolve('node_modules/lodash-es') }),
   ],
   build: {
     minify: false,
     lib: {
-      entry: './src/index.ts',
-      fileName: 'index',
+      entry: ['./src/index.ts', './src/commonjs.js'],
       name: 'index',
-      formats: ['es', 'cjs']
     }
   }
 })
